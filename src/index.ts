@@ -1,7 +1,24 @@
-function sayIt() {
-  const age = 10
-}
+import express from 'express'
+import http from 'http'
+import bodyparser from 'body-parser'
+import cookieParser from 'cookie-parser'
+import compression from 'compression'
+import cors from 'cors'
 
-const age = 12
+const app = express()
 
-const things = ['cool', 'double!!!']
+app.use(
+  cors({
+    credentials: true,
+  }),
+)
+
+app.use(compression())
+app.use(cookieParser())
+app.use(bodyparser.json())
+
+const server = http.createServer(app)
+
+server.listen(8000, () => {
+  console.log('Server running: 8080 Port')
+})
