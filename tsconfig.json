@@ -1,12 +1,21 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "target": "ES6", // or "ES2020" or "ES6"
+    "module": "CommonJS",
     "moduleResolution": "node",
     "baseUrl": "src",
     "outDir": "dist",
     "sourceMap": true,
     "noImplicitAny": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "esModuleInterop": true // Enables better compatibility between CommonJS and ES Modules
   },
-  "include": ["src/**/*"]
+  "include":
+  [
+    "src/**/*",
+    ".env",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/**/*"
+  ]
 }
